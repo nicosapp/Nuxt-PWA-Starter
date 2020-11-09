@@ -112,9 +112,7 @@ export default {
     baseURL: env.parsed.API_URL,
   },
 
-  env: {
-    appUrl: env.parsed.APP_URL,
-  },
+  env: env.parsed,
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
