@@ -1,0 +1,16 @@
+@function hextorgb($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+$color-primary: #03a678;
+$color-rating: #eceff1;
+$color-highlight: #ffca28;
+$color-crossdico: #a5d6a7;
+$color-appbar: #f5f5f5;
+:root {
+  --color-appbar: #{$color-appbar};
+  --color-primary: #{$color-primary};
+  --color-primary--rgb: #{hextorgb($color-primary)};
+  --color-rating: #{$color-rating};
+  --color-highlight: #{$color-highlight};
+  --color-crossdico: #{$color-crossdico};
+}

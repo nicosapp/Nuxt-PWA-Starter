@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-bottom-navigation
-      v-if="verified"
+      v-if="visible"
       v-model="active"
       grow
       app
@@ -51,7 +51,7 @@ export default {
     ...mapGetters({
       activeValue: 'bottomBar/active',
     }),
-    verified() {
+    visible() {
       return this.$auth.loggedIn && this.$auth.user.is_verified
     },
     active: {

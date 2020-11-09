@@ -67,7 +67,8 @@
               block
               height="3em"
               type="submit"
-              :disabled="!valid"
+              :disabled="!valid || loading"
+              :loading="loading"
               color="primary"
               class="mr-4"
               @click="validate"
@@ -96,6 +97,7 @@ export default {
   mixins: [validationRules],
   data() {
     return {
+      loading: true,
       valid: true,
       show: false,
       nameLength: (v) => v.length >= 4 || 'Min 4 characters',
@@ -119,6 +121,7 @@ export default {
       this.$refs.form.validate()
     },
     async signup() {
+      this.loading = true
       try {
         await this.$axios.$post('auth/signup', this.form)
         this.$router.push({
@@ -130,6 +133,7 @@ export default {
           this.$notifier.error({ message: 'There is an error in the form!' })
         }
       }
+      this.loading = false
     },
   },
   head() {

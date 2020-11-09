@@ -7,7 +7,6 @@
         <nuxt />
       </v-container>
     </v-main>
-    <TheBottomBar />
     <TheFixedComponents />
   </v-app>
 </template>

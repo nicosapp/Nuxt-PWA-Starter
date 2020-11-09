@@ -1,6 +1,7 @@
 <template>
   <v-container>
-    <VerifyLink />
+    <VerifyLink v-if="isNotVerified" />
+    <template v-else>
     <h2 class="text-center mb-4">Hello {{ $auth.user.name }}</h2>
     <div class="d-flex">
       <h3 class="mb-4 flex-grow-1">User informations</h3>
@@ -193,6 +194,7 @@
         </v-form>
       </v-col>
     </v-row>
+    </template>
   </v-container>
 </template>
 <script>
@@ -230,6 +232,9 @@ export default {
   computed: {
     isError() {
       return Object.keys(this.validation).length
+    },
+    isNotVerified() {
+      return this.$auth.loggedIn && !this.$auth.user.is_verified
     },
   },
   mounted() {

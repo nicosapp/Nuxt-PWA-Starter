@@ -71,6 +71,7 @@ export default {
     redirect: {
       login: false,
       home: false,
+      logout: '/auth/signin',
     },
     strategies: {
       local: {
@@ -78,27 +79,15 @@ export default {
           login: {
             url: '/login',
             method: 'post',
-            // headers: {
-            //   'X-Requested-With': 'XMLHttpRequest',
-            //   'Content-Type': 'application/json',
-            // },
           },
           logout: {
             url: '/logout',
             method: 'post',
-            // headers: {
-            //   'X-Requested-With': 'XMLHttpRequest',
-            //   'Content-Type': 'application/json',
-            // },
           },
           user: {
             url: '/user',
             method: 'get',
             propertyName: 'data',
-            // headers: {
-            //   'X-Requested-With': 'XMLHttpRequest',
-            //   'Content-Type': 'application/json',
-            // },
           },
         },
         tokenRequired: false,

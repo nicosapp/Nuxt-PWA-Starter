@@ -73,6 +73,7 @@ export default {
   },
   data() {
     return {
+      loading: false,
       valid: true,
       email: '',
       password: '',
